@@ -4,7 +4,7 @@ import styles from '../assets/jss/nextjs-material-kit/pages/components';
 import GridContainer from '../components/Grid/GridContainer';
 import GridItem from '../components/Grid/GridItem';
 
-import SectionBasics from '../pages-sections/Components-Sections/SectionBasics';
+import SectionBasics from './sections/SectionBasics';
 
 import Parallax from '../layouts/Parallax';
 
