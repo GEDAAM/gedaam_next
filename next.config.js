@@ -5,7 +5,7 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = withPlugins([[withSass], [withImages]], {
-  webpack(config, options) {
+  webpack(config, _options) {
     config.resolve.modules.push(path.resolve("./"));
     return config;
   }

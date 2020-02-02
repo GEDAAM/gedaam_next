@@ -1,23 +1,23 @@
 /*eslint-disable*/
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Tooltip from '@material-ui/core/Tooltip';
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
+import { Apps, CloudDownload } from '@material-ui/icons';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import Button from "components/CustomButtons/Button.js";
+import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
+import Button from 'components/CustomButtons/Button.js';
 
-import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
+import styles from 'assets/jss/nextjs-material-kit/components/headerLinksStyle.js';
 
 const useStyles = makeStyles(styles);
 
@@ -32,7 +32,7 @@ export default function HeaderLinks(props) {
           buttonText="Components"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: 'transparent'
           }}
           buttonIcon={Apps}
           dropdownList={[
@@ -51,7 +51,7 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-navbar"
+          href="/test"
           color="transparent"
           target="_blank"
           className={classes.navLink}
@@ -68,16 +68,15 @@ export default function HeaderLinks(props) {
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
-          placement={"top"}
+          placement={'top'}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
             href="https://twitter.com/CreativeTim?ref=creativetim"
-            target="_blank"
             color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
+            <i className={classes.socialIcons + ' fab fa-twitter'} />
           </Button>
         </Tooltip>
       </ListItem>
@@ -85,7 +84,7 @@ export default function HeaderLinks(props) {
         <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
-          placement={"top"}
+          placement={'top'}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
@@ -94,7 +93,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
+            <i className={classes.socialIcons + ' fab fa-facebook'} />
           </Button>
         </Tooltip>
       </ListItem>
@@ -102,7 +101,7 @@ export default function HeaderLinks(props) {
         <Tooltip
           id="instagram-tooltip"
           title="Follow us on instagram"
-          placement={"top"}
+          placement={'top'}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
@@ -111,7 +110,7 @@ export default function HeaderLinks(props) {
             target="_blank"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
+            <i className={classes.socialIcons + ' fab fa-instagram'} />
           </Button>
         </Tooltip>
       </ListItem>
