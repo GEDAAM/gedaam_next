@@ -1,12 +1,12 @@
+import { cloneElement } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from '../assets/jss/nextjs-material-kit/pages/components';
 
-import Header from '../components/Header/Header';
-import HeaderLinks from '../components/Header/HeaderLinks';
 import Footer from '../components/Footer/Footer';
 
-export default function Prallax(props) {
+export default function Parallax(props) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   const parallax = {
@@ -17,27 +17,12 @@ export default function Prallax(props) {
   return (
     <div>
       <div>
-        {/* {React.cloneElement(props.header, { callerId: "parallax-wrapper" })} */}
-        {
-          <Header
-            brand="NextJS Material Kit"
-            rightLinks={<HeaderLinks />}
-            fixed
-            color="transparent"
-            changeColorOnScroll={{
-              height: 400,
-              color: 'white'
-            }}
-            callerId="parallax-wrapper"
-          />
-        }
+        {cloneElement(props.header, { callerId: 'parallax-wrapper' })}
         <div className="wrapper" id="parallax-wrapper">
           <div className="section parallax">
-            <div className={classes.container}>{props.title}</div>
+            <div className={classes.container}>{props.content}</div>
           </div>
-          <div className={classNames(classes.main, classes.mainRaised)}>
-            {props.content}
-          </div>
+          <div className={classNames(classes.main, classes.mainRaised)}>{props.children}</div>
           <Footer />
         </div>
       </div>
@@ -57,12 +42,32 @@ export default function Prallax(props) {
           max-height: 1000px;
           transform-style: inherit;
           z-index: -5; /* Any number will do, so long as it's lower than the parallax */
-          /* For text formatting. */
           display: flex;
           align-items: center;
         }
 
         .parallax::before {
+          content: '';
+          height: 100vh;
+          position: absolute;
+          z-index: -2;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          background-position: center top;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-image: url(${props.image});
+          transform-style: inherit;
+          transform: translate3d(-10px, 0, ${parallax.translate}px)
+            scale(${1 - parallax.translate / parallax.perspective});
+        }
+
+        .parallax::after {
           content: '';
           height: 100vh;
           position: absolute;
@@ -74,10 +79,7 @@ export default function Prallax(props) {
           margin: 0;
           padding: 0;
           border: 0;
-          background-position: center top;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-image: url(${require('assets/img/nextjs_header.jpg')});
+          background: ${props.overlayColor};
           transform-style: inherit;
           transform: translate3d(-10px, 0, ${parallax.translate}px)
             scale(${1 - parallax.translate / parallax.perspective});
@@ -92,3 +94,15 @@ export default function Prallax(props) {
     </div>
   );
 }
+
+Parallax.defaultProp = {
+  overlayColor: '#ffffff00'
+};
+
+Parallax.propTypes = {
+  children: PropTypes.node.isRequired,
+  content: PropTypes.node.isRequired,
+  header: PropTypes.node.isRequired,
+  image: PropTypes.string.isRequired,
+  overlayColor: PropTypes.string
+};
