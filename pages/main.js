@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from '../assets/jss/nextjs-material-kit/pages/components';
 
@@ -16,6 +17,10 @@ export default function Main() {
 
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="initial-scale=1.2, width=device-width" key="viewport" />
+        <title>GEDAAM</title>
+      </Head>
       <Parallax
         header={
           <Header
