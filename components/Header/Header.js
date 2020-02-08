@@ -32,7 +32,9 @@ export default function Header(props) {
       ? document.getElementById(changeColorOnScroll.scrollTargetId).scrollTop
       : window.scrollY;
 
-    if (targetScroller > changeColorOnScroll.height) {
+    const effectHeight = changeColorOnScroll.height || window.innerHeight*0.6;
+
+    if (targetScroller > effectHeight) {
       document.body.getElementsByTagName('header')[0].classList.remove(classes[color]);
       document.body
         .getElementsByTagName('header')[0]
@@ -137,7 +139,7 @@ Header.propTypes = {
   absolute: PropTypes.bool,
   changeColorOnScroll: PropTypes.shape({
     scrollTargetId: PropTypes.string,
-    height: PropTypes.number.isRequired,
+    height: PropTypes.number,
     color: PropTypes.oneOf([
       'primary',
       'info',
