@@ -2,7 +2,7 @@ import { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
-import styles from '../assets/jss/nextjs-material-kit/pages/components';
+import styles from '../assets/jss/pages/main';
 
 import Footer from '../components/Footer/Footer';
 
@@ -17,7 +17,13 @@ export default function Parallax(props) {
   return (
     <div>
       <div>
-        {cloneElement(props.header, { callerId: 'parallax-wrapper' })}
+        {cloneElement(props.header, {
+          changeColorOnScroll: {
+            height: 400,
+            color: 'primary',
+            scrollTargetId: 'parallax-wrapper'
+          }
+        })}
         <div className="wrapper" id="parallax-wrapper">
           <div className="section parallax">
             <div className={classes.container}>{props.content}</div>

@@ -1,15 +1,13 @@
 import Head from 'next/head';
 import { makeStyles } from '@material-ui/core/styles';
-import styles from '../assets/jss/nextjs-material-kit/pages/components';
+import styles from '../assets/jss/pages/main';
 
 import Header from '../components/Header/Header';
 import HeaderLinks from '../components/Header/HeaderLinks';
 import GridContainer from '../components/Grid/GridContainer';
 import GridItem from '../components/Grid/GridItem';
-
-import LandingSection from './sections/LandingSection';
-
 import Parallax from '../layouts/Parallax';
+import LandingSection from './sections/LandingSection';
 
 export default function Main() {
   const useStyles = makeStyles(styles);
@@ -22,19 +20,7 @@ export default function Main() {
         <title>GEDAAM</title>
       </Head>
       <Parallax
-        header={
-          <Header
-            brand="GEDAAM"
-            color="transparent"
-            changeColorOnScroll={{
-              height: 400,
-              color: 'primary'
-            }}
-            rightLinks={<HeaderLinks />}
-            fixed
-            callerId="parallax-wrapper"
-          />
-        }
+        header={<Header brand="GEDAAM" color="transparent" rightLinks={<HeaderLinks />} fixed />}
         image="/img/landing.jpg"
         overlayColor="#00000066"
         content={
@@ -42,6 +28,10 @@ export default function Main() {
             <GridItem>
               <div className={classes.brand}>
                 <h1 className={classes.title}>Estude diferente.</h1>
+                <h4 className={classes.subtitle}>
+                  O GEDAAM é o maior grupo de estudos da Faculdade de Medicina da UFMG. Aqui nós
+                  discutimos sobre novas abordagens para o ensino e aprendizado.
+                </h4>
               </div>
             </GridItem>
           </GridContainer>

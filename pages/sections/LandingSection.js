@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-import styles from 'assets/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js';
+import styles from 'assets/jss/pages/componentsSections/basicsStyle.js';
 
 const useStyles = makeStyles(styles);
 export default function LandingSection() {

@@ -54,66 +54,66 @@ const defaultFont = {
   lineHeight: '1.5em'
 };
 
-const primaryColor = '#6DC09E';
+const primaryColor = '#34D09E';
 const warningColor = '#F0E22A';
 const dangerColor = '#F3785E';
-const successColor = '#B7D753';
+const successColor = '#9CD654';
 const infoColor = '#78ADDD';
-const roseColor = '#D487AC';
+const roseColor = '#CC648A';
 const grayColor = '#999999';
 
 const primaryBoxShadow = {
   boxShadow:
-    '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)'
+    '0 12px 20px -10px rgba(55, 222, 169, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(40, 158, 121, 0.2)'
 };
 const infoBoxShadow = {
   boxShadow:
-    '0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)'
+    '0 12px 20px -10px rgba(127, 182, 235, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(92, 133, 171, 0.2)'
 };
 const successBoxShadow = {
   boxShadow:
-    '0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2)'
+    '0 12px 20px -10px rgba(175, 221, 119, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(117, 179, 43, 0.2)'
 };
 const warningBoxShadow = {
   boxShadow:
-    '0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)'
+    '0 12px 20px -10px rgba(242, 232, 90, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(252, 238, 43, 0.2)'
 };
 const dangerBoxShadow = {
   boxShadow:
-    '0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)'
+    '0 12px 20px -10px rgba(245, 133, 110, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(247, 85, 52, 0.2)'
 };
 const roseBoxShadow = {
-  boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4)'
+  boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(168, 66, 103, 0.4)'
 };
 
 const warningCardHeader = {
   color: '#fff',
-  background: 'linear-gradient(60deg, #ffa726, #fb8c00)',
+  background: 'linear-gradient(60deg, #F2E85A, #FCEE2B)',
   ...warningBoxShadow
 };
 const successCardHeader = {
   color: '#fff',
-  background: 'linear-gradient(60deg, #66bb6a, #43a047)',
+  background: 'linear-gradient(60deg, #AFDD77, #75B32B)',
   ...successBoxShadow
 };
 const dangerCardHeader = {
   color: '#fff',
-  background: 'linear-gradient(60deg, #ef5350, #e53935)',
+  background: 'linear-gradient(60deg, #F5856E, #F75534)',
   ...dangerBoxShadow
 };
 const infoCardHeader = {
   color: '#fff',
-  background: 'linear-gradient(60deg, #26c6da, #00acc1)',
+  background: 'linear-gradient(60deg, #7FB6EB, #5C85AB)',
   ...infoBoxShadow
 };
 const primaryCardHeader = {
   color: '#fff',
-  background: 'linear-gradient(60deg, #ab47bc, #8e24aa)',
+  background: 'linear-gradient(60deg, #37DEA9, #289E79)',
   ...primaryBoxShadow
 };
 const roseCardHeader = {
   color: '#fff',
-  background: 'linear-gradient(60deg, #ec407a, #d81b60)',
+  background: 'linear-gradient(60deg, #D47296, #A84267)',
   ...roseBoxShadow
 };
 const cardActions = {

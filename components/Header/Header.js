@@ -15,7 +15,7 @@ import Drawer from '@material-ui/core/Drawer';
 // @material-ui/icons
 import Menu from '@material-ui/icons/Menu';
 // core components
-import styles from 'assets/jss/nextjs-material-kit/components/headerStyle.js';
+import styles from 'assets/jss/components/headerStyle.js';
 
 const useStyles = makeStyles(styles);
 
@@ -28,8 +28,8 @@ export default function Header(props) {
   };
   const headerColorChange = () => {
     const { color, changeColorOnScroll } = props;
-    const targetScroller = props.callerId
-      ? document.getElementById(props.callerId).scrollTop
+    const targetScroller = changeColorOnScroll.scrollTargetId
+      ? document.getElementById(changeColorOnScroll.scrollTargetId).scrollTop
       : window.scrollY;
 
     if (targetScroller > changeColorOnScroll.height) {
@@ -46,17 +46,21 @@ export default function Header(props) {
   };
 
   useEffect(() => {
-    const targetScrollEl = props.callerId ? document.getElementById(props.callerId) : window;
+    const { changeColorOnScroll } = props;
+    const scrollTargetEl = changeColorOnScroll.scrollTargetId
+      ? document.getElementById(changeColorOnScroll.scrollTargetId)
+      : window;
 
-    if (props.changeColorOnScroll) {
-      targetScrollEl.addEventListener('scroll', headerColorChange);
+    if (changeColorOnScroll) {
+      scrollTargetEl.addEventListener('scroll', headerColorChange);
     }
     return function cleanup() {
-      if (props.changeColorOnScroll) {
-        targetScrollEl.removeEventListener('scroll', headerColorChange);
+      if (changeColorOnScroll) {
+        scrollTargetEl.removeEventListener('scroll', headerColorChange);
       }
     };
   });
+
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -131,9 +135,8 @@ Header.propTypes = {
   brand: PropTypes.string,
   fixed: PropTypes.bool,
   absolute: PropTypes.bool,
-  // This is a workaround to use the color change on scroll when the scroll bar is not the window bar
-  callerId: PropTypes.string,
   changeColorOnScroll: PropTypes.shape({
+    scrollTargetId: PropTypes.string,
     height: PropTypes.number.isRequired,
     color: PropTypes.oneOf([
       'primary',
