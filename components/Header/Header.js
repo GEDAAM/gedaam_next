@@ -72,7 +72,7 @@ export default function Header(props) {
   });
 
   const brandComponent = (
-    <Link href="/components" as="/components">
+    <Link href="/" as="/">
       <Button className={classes.title}>{brand}</Button>
     </Link>
   );

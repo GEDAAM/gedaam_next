@@ -62,7 +62,8 @@ const headerStyle = {
     letterSpacing: 'unset',
     '&:hover,&:focus': {
       color: 'inherit',
-      background: 'transparent'
+      background: 'transparent',
+      filter: 'invert(27%)'
     }
   },
   appResponsive: {
@@ -71,32 +72,32 @@ const headerStyle = {
   primary: {
     backgroundColor: primaryColor,
     color: '#FFFFFF',
-    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(156, 39, 176, 0.46)'
+    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(40, 158, 121, 0.46)'
   },
   info: {
     backgroundColor: infoColor,
     color: '#FFFFFF',
-    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(0, 188, 212, 0.46)'
+    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(92, 133, 171, 0.46)'
   },
   success: {
     backgroundColor: successColor,
     color: '#FFFFFF',
-    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(76, 175, 80, 0.46)'
+    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(117, 179, 43, 0.46)'
   },
   warning: {
     backgroundColor: warningColor,
     color: '#FFFFFF',
-    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(255, 152, 0, 0.46)'
+    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(252, 238, 43, 0.46)'
   },
   danger: {
     backgroundColor: dangerColor,
     color: '#FFFFFF',
-    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(244, 67, 54, 0.46)'
+    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(247, 85, 52, 0.46)'
   },
   rose: {
     backgroundColor: roseColor,
     color: '#FFFFFF',
-    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(233, 30, 99, 0.46)'
+    boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(168, 66, 103, 0.46)'
   },
   transparent: {
     backgroundColor: 'transparent !important',

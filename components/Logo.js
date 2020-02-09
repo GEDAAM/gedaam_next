@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 export default function Brand(props) {
   return (
     <>
-      <object type="image/svg+xml" data="/img/logo-white.svg" className="svg">
+      <object type="image/svg+xml" data="/img/logo-white.svg" className="svg logo">
         Logo GEDAAM
       </object>
-      <div className="brand">GEDAAM</div>
+      <div className="brand logo">GEDAAM</div>
       <style jsx>{/* CSS */ `
         .brand {
           display: ${props.showSideText ? 'block' : 'none'};
