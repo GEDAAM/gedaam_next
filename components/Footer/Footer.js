@@ -33,25 +33,16 @@ export default function Footer(props) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/?ref=njsmk-footer"
+                href="/"
                 className={classes.block}
                 target="_blank"
               >
-                Creative Tim
+                Sobre o GEDAAM
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/presentation?ref=njsmk-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                About us
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="http://blog.creative-tim.com/?ref=njsmk-footer"
+                href="/"
                 className={classes.block}
                 target="_blank"
               >
@@ -60,26 +51,25 @@ export default function Footer(props) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/license?ref=njsmk-footer"
+                href="/"
                 className={classes.block}
                 target="_blank"
               >
-                Licenses
+                Licenças
               </a>
             </ListItem>
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+          &copy; {1900 + new Date().getYear()} , feito com {" "}
+          <Favorite className={classes.icon} /> pelo{" "}
           <a
-            href="https://www.creative-tim.com?ref=njsmk-footer"
+            href="/"
             className={aClasses}
             target="_blank"
           >
-            Creative Tim
+            GEDAAM
           </a>{" "}
-          for a better web.
         </div>
       </div>
     </footer>

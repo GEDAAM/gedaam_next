@@ -19,7 +19,7 @@ export default function Parallax(props) {
       <div>
         {cloneElement(props.header, {
           changeColorOnScroll: {
-            color: 'secondary',
+            color: 'rose',
             scrollTargetId: 'parallax-wrapper'
           }
         })}

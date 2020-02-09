@@ -8,6 +8,7 @@ import GridContainer from '../components/Grid/GridContainer';
 import GridItem from '../components/Grid/GridItem';
 import Parallax from '../layouts/Parallax';
 import LandingSection from './sections/LandingSection';
+import Brand from '../components/Logo';
 
 export default function Main() {
   const useStyles = makeStyles(styles);
@@ -20,9 +21,15 @@ export default function Main() {
         <title>GEDAAM</title>
       </Head>
       <Parallax
-        header={<Header brand="GEDAAM" color="transparent" rightLinks={<HeaderLinks />} fixed />}
+        header={
+          <Header
+            brand={<Brand showSideText />}
+            color="transparent"
+            rightLinks={<HeaderLinks />}
+            fixed
+          />
+        }
         image="/img/landing.jpg"
-        overlayColor="#00000066"
         content={
           <GridContainer>
             <GridItem>

@@ -32,7 +32,7 @@ export default function Header(props) {
       ? document.getElementById(changeColorOnScroll.scrollTargetId).scrollTop
       : window.scrollY;
 
-    const effectHeight = changeColorOnScroll.height || window.innerHeight*0.6;
+    const effectHeight = changeColorOnScroll.height || window.innerHeight * 0.6;
 
     if (targetScroller > effectHeight) {
       document.body.getElementsByTagName('header')[0].classList.remove(classes[color]);
@@ -116,7 +116,7 @@ export default function Header(props) {
   );
 }
 
-Header.defaultProp = {
+Header.defaultProps = {
   color: 'white'
 };
 

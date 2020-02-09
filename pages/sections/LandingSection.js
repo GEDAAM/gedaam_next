@@ -15,11 +15,6 @@ export default function LandingSection() {
         </div>
         <div id="buttons">
           <div className={classes.title}>
-            <h3>
-              Buttons
-              <br />
-              <small>Pick your style</small>
-            </h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit molestiae expedita, autem
               ea quibusdam odit aliquid perspiciatis dolorum reprehenderit earum mollitia libero
