@@ -12,25 +12,14 @@ export default function LandingSection() {
       <div className={classes.container}>
         <div className={classes.title}>
           <h2>Basic Elements</h2>
-        </div>
-        <div id="buttons">
-          <div className={classes.title}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit molestiae expedita, autem
-              ea quibusdam odit aliquid perspiciatis dolorum reprehenderit earum mollitia libero
-              obcaecati repellat consectetur rerum sunt quaerat quae quasi!
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus eius optio officiis
-              commodi accusamus debitis consequatur dolore adipisci est dolores fugit deserunt, hic
-              numquam unde, eos cupiditate culpa, veniam tempora.
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas in ipsum qui quo
-              quae est dicta ipsam debitis expedita, earum eum modi quod. Ex accusantium nesciunt,
-              sed fugiat voluptas quod.
-            </p>
-          </div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit molestiae expedita, autem
+          quibusdam odit aliquid perspiciatis dolorum reprehenderit earum mollitia libero obcaecati
+          repellat consectetur rerum sunt quaerat quae quasi! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Cupiditate expedita beatae sit dolor perferendis neque tempora eaque
+          ipsum saepe nulla consequuntur voluptates, amet ab minima iusto dolorum corrupti tempore
+          dolorem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi incidunt eveniet
+          nihil rem ab iusto animi aspernatur sunt, adipisci possimus debitis. Maiores porro, quidem
+          quibusdam officiis incidunt cum alias provident.
         </div>
       </div>
     </div>

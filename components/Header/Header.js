@@ -32,7 +32,7 @@ export default function Header(props) {
       ? document.getElementById(changeColorOnScroll.scrollTargetId).scrollTop
       : window.scrollY;
 
-    const effectHeight = changeColorOnScroll.height || window.innerHeight * 0.6;
+    const effectHeight = changeColorOnScroll.height || window.innerHeight * 0.7;
 
     if (targetScroller > effectHeight) {
       document.body.getElementsByTagName('header')[0].classList.remove(classes[color]);

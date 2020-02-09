@@ -1,6 +1,5 @@
 import { cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from '../assets/jss/pages/main';
 
@@ -27,7 +26,7 @@ export default function Parallax(props) {
           <div className="section parallax">
             <div className={classes.container}>{props.content}</div>
           </div>
-          <div className={classNames(classes.main, classes.mainRaised)}>{props.children}</div>
+          <div>{props.children}</div>
           <Footer />
         </div>
       </div>

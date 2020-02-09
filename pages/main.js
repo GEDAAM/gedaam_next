@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from '../assets/jss/pages/main';
-
 import Header from '../components/Header/Header';
 import HeaderLinks from '../components/Header/HeaderLinks';
 import GridContainer from '../components/Grid/GridContainer';
@@ -44,7 +43,11 @@ export default function Main() {
           </GridContainer>
         }
       >
-        <LandingSection />
+        <div className={classes.main}>
+          <LandingSection />
+          <LandingSection />
+          <LandingSection />
+        </div>
       </Parallax>
     </div>
   );

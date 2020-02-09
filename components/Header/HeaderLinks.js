@@ -20,14 +20,12 @@ import styles from "assets/jss/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+export default function HeaderLinks() {
   const classes = useStyles();
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <Link href="/">
-          <a className={classes.dropdownLink}>All components</a>
-        </Link>
+      <Button color="transparent" href="/" className={classes.navLink}>Inscrição</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
@@ -54,7 +52,6 @@ export default function HeaderLinks(props) {
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            id="icon"
             color="transparent"
             href="https://www.instagram.com/gedaam_?ref=gedaam"
             target="_blank"
@@ -64,11 +61,6 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem>
-  <style jsx>{/* CSS */`
-    #icon {
-      position: absolute;
-    }
-  `}</style>
     </List>
   );
 }
