@@ -63,7 +63,7 @@ const headerStyle = {
     '&:hover,&:focus': {
       color: 'inherit',
       background: 'transparent',
-      filter: 'invert(27%)'
+      filter: 'invert(10%)'
     }
   },
   appResponsive: {

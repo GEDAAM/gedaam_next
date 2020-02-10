@@ -65,25 +65,8 @@ export default function Parallax(props) {
           background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
-          background-image: url(${props.image});
-          transform-style: inherit;
-          transform: translate3d(-10px, 0, ${parallax.translate}px)
-            scale(${1 - parallax.translate / parallax.perspective});
-        }
-
-        .parallax::after {
-          content: '';
-          height: 100vh;
-          position: absolute;
-          z-index: -1;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          margin: 0;
-          padding: 0;
-          border: 0;
-          background: ${props.overlayColor};
+          background-image: linear-gradient(${props.overlayColor}, ${props.overlayColor}),
+            url(${props.image});
           transform-style: inherit;
           transform: translate3d(-10px, 0, ${parallax.translate}px)
             scale(${1 - parallax.translate / parallax.perspective});
@@ -99,8 +82,8 @@ export default function Parallax(props) {
   );
 }
 
-Parallax.defaultProp = {
-  overlayColor: '#ffffff00'
+Parallax.defaultProps = {
+  overlayColor: 'rgba(255, 255, 255, 0)'
 };
 
 Parallax.propTypes = {

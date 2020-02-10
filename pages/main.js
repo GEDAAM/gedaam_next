@@ -6,7 +6,7 @@ import HeaderLinks from '../components/Header/HeaderLinks';
 import GridContainer from '../components/Grid/GridContainer';
 import GridItem from '../components/Grid/GridItem';
 import Parallax from '../layouts/Parallax';
-import LandingSection from './sections/LandingSection';
+import TimelineSection from './sections/TimelineSection';
 import Brand from '../components/Logo';
 
 export default function Main() {
@@ -14,7 +14,7 @@ export default function Main() {
   const classes = useStyles();
 
   return (
-    <div>
+    <>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
         <title>GEDAAM</title>
@@ -43,12 +43,8 @@ export default function Main() {
           </GridContainer>
         }
       >
-        <div className={classes.main}>
-          <LandingSection />
-          <LandingSection />
-          <LandingSection />
-        </div>
+        <TimelineSection />
       </Parallax>
-    </div>
+    </>
   );
 }
