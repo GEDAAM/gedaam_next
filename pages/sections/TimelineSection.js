@@ -90,7 +90,9 @@ export default function TimelineSection() {
                 <h4>{event.balloonTitle}</h4>
                 <p>{event.balloonContent}</p>
               </div>
-              <div className={`date date-${id % 2 === 1 ? 'even' : 'odd'}`}>{event.date}</div>
+              <span className={`date date-${id % 2 === 1 ? 'even' : 'odd'}`}>
+                <p>{event.date}</p>
+              </span>
             </div>
           ))}
         </div>
@@ -145,7 +147,7 @@ export default function TimelineSection() {
           display: grid;
           grid-template: auto / 1fr 80px 1fr;
           grid-template-areas: 'left bubble right';
-          grid-gap: 10px 10px;
+          grid-gap: 1.6em 1.6em;
           align-items: start;
         }
 
@@ -174,7 +176,7 @@ export default function TimelineSection() {
 
         .bubble > .icon {
           box-sizing: inherit;
-          font-size: 25px !important;
+          font-size: 1.6rem !important;
         }
 
         .balloon > h4 {
@@ -236,10 +238,25 @@ export default function TimelineSection() {
           animation: cd-bounce-2-inverse 0.6s;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 900px) {
+          p {
+            font-weight: 350 !important;
+            line-height: 1.6 !important;
+          }
+
           .timeline-wrapper::before {
-            left: 0;
-            margin-left: 1em;
+            left: calc(1.4em + 2px); /* sums half the width */
+          }
+
+          .timeline-block {
+            position: relative;
+            top: 0;
+            margin: 2em 1em;
+            margin-left: -0.4em; /* fix that */
+            display: grid;
+            grid-template: auto / 60px 1fr;
+            grid-template-areas: 'bubble right';
+            align-items: start;
           }
 
           .bubble {
@@ -248,23 +265,29 @@ export default function TimelineSection() {
           }
 
           .bubble > .icon {
-            font-size: 15px !important;
+            font-size: 1.2rem !important;
           }
 
-          .timeline-block {
-            position: relative;
-            top: 0;
-            margin: 1em 1em;
-            display: grid;
-            grid-template: auto / 60px 1fr;
-            grid-template-areas: 'bubble right';
-            ${'' /* grid-gap: 10px 10px; */}
-            align-items: start;
+          .balloon {
+            grid-area: right !important;
+            justify-self: start !important;
+            max-height: 70vh;
           }
 
-          .date.date-even {
-            grid-area: right;
-            justify-self: start;
+          /**
+           * The style below is a workaround
+           */
+          .balloon > p {
+            padding-bottom: 3em;
+          }
+
+          .date {
+            grid-area: right !important;
+            justify-self: start !important;
+            align-self: end;
+            padding: 0;
+            margin: 1.6em;
+            z-index: 7;
           }
         }
 
