@@ -10,6 +10,7 @@ export default function TimelineSection() {
       iconFAClasses: 'fa fa-fw fa-play pointer',
       iconBgColor: '#75ce66',
       iconOffset: [0, 5],
+      date: 'Janeiro de 2017',
       balloonTitle: 'NextJS Material Kit.',
       balloonContent:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non incidunt sapiente est soluta dolores voluptate reiciendis quo tempora ullam neque quasi eius odit, repellendus asperiores iusto architecto beatae placeat ab?'
@@ -18,6 +19,7 @@ export default function TimelineSection() {
       iconFAClasses: 'fa fa-fw fa-play pointer',
       iconBgColor: '#75ce66',
       iconOffset: [0, 5],
+      date: 'Outubro de 2019',
       balloonTitle: 'NextJS Material Kit.',
       balloonContent: 'I am no Lorem'
     },
@@ -25,6 +27,16 @@ export default function TimelineSection() {
       iconFAClasses: 'fa fa-fw fa-play pointer',
       iconBgColor: '#75ce66',
       iconOffset: [0, 5],
+      date: 'Janeiro de 2017',
+      balloonTitle: 'NextJS Material Kit.',
+      balloonContent:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non incidunt sapiente est soluta dolores voluptate reiciendis quo tempora ullam neque quasi eius odit, repellendus asperiores iusto architecto beatae placeat ab?'
+    },
+    {
+      iconFAClasses: 'fa fa-fw fa-play pointer',
+      iconBgColor: '#75ce66',
+      iconOffset: [0, 5],
+      date: 'Outubro de 2019',
       balloonTitle: 'NextJS Material Kit.',
       balloonContent: 'I am no Lorem'
     },
@@ -32,6 +44,16 @@ export default function TimelineSection() {
       iconFAClasses: 'fa fa-fw fa-play pointer',
       iconBgColor: '#75ce66',
       iconOffset: [0, 5],
+      date: 'Janeiro de 2017',
+      balloonTitle: 'NextJS Material Kit.',
+      balloonContent:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non incidunt sapiente est soluta dolores voluptate reiciendis quo tempora ullam neque quasi eius odit, repellendus asperiores iusto architecto beatae placeat ab?'
+    },
+    {
+      iconFAClasses: 'fa fa-fw fa-play pointer',
+      iconBgColor: '#75ce66',
+      iconOffset: [0, 5],
+      date: 'Outubro de 2019',
       balloonTitle: 'NextJS Material Kit.',
       balloonContent: 'I am no Lorem'
     }
@@ -40,12 +62,12 @@ export default function TimelineSection() {
   return (
     <section className={`${classes.main} timeline`}>
       <div className="wrapper">
-        <div id="timeline-title" className={`${classes.title} timeline-title`}>
-          <h1 className={''}>Nossa História</h1>
+        <div className={`${classes.title} wrapper`}>
+          <h1 className="timeline-title">Nossa História</h1>
         </div>
         <div className="timeline timeline-wrapper">
           {timelineEvents.map((event, id) => (
-            <div className="wrapper timeline-block" key={`event-${id}`}>
+            <div className="timeline-block" key={`event-${id}`}>
               <div
                 className="bubble"
                 key={`bubble-${id}`}
@@ -62,15 +84,13 @@ export default function TimelineSection() {
                 ></i>
               </div>
               <div
-                className={`${classes.main} ${classes.mainRaised} balloon balloon-${
-                  id % 2 === 1 ? 'even' : 'odd'
-                }`}
+                className={`balloon balloon-${id % 2 === 1 ? 'even' : 'odd'}`}
                 key={`balloon-${id}`}
               >
                 <h4>{event.balloonTitle}</h4>
                 <p>{event.balloonContent}</p>
               </div>
-              <div className={`date date-${id % 2 === 1 ? 'even' : 'odd'}`}>10 de junho</div>
+              <div className={`date date-${id % 2 === 1 ? 'even' : 'odd'}`}>{event.date}</div>
             </div>
           ))}
         </div>
@@ -78,8 +98,9 @@ export default function TimelineSection() {
       <style jsx>{/* CSS */ `
         .timeline {
           padding-bottom: 0rem;
-          display: block;
-          height: 100%; /* auto */
+          height: 100%;
+          display: flex;
+          flex-direction: column;
         }
 
         .wrapper {
@@ -88,14 +109,11 @@ export default function TimelineSection() {
 
         .timeline-title {
           width: 100%;
-          padding: 60px;
           box-sizing: border-box;
+          padding: 60px;
           text-align: center;
+          font-weight: 400;
         }
-
-        ${'' /* #timeline-title {
-          font-weight: bold;
-        } */}
 
         .timeline-wrapper {
           width: 90%;
@@ -111,10 +129,10 @@ export default function TimelineSection() {
           /* vertical line */
           content: '';
           position: absolute;
-          top: 0;
+          top: 30px;
           left: 50%;
           transform: translateX(-50%);
-          height: 95%;
+          height: calc(90% - 30px);
           width: 4px;
           background-color: ${infoColor};
           filter: opacity(30%) grayscale(20%);
@@ -122,30 +140,27 @@ export default function TimelineSection() {
 
         .timeline-block {
           position: relative;
-          margin: 2em 0;
+          top: 0;
+          margin: 2em 2em;
+          display: grid;
+          grid-template: auto / 1fr 80px 1fr;
+          grid-template-areas: 'left bubble right';
+          grid-gap: 10px 10px;
+          align-items: start;
         }
 
-        .timeline-block::after {
-          /* clearfix */
-          content: '';
-          display: table;
-          clear: both;
-        }
-
-        .cd-timeline-block:first-child {
+        .timeline-block:first-child {
           margin-top: 0;
         }
 
-        .cd-timeline-block:last-child {
+        .timeline-block:last-child {
           margin-bottom: 0;
         }
 
         .bubble {
-          position: absolute;
-          ${'' /* box-sizing: border-box; */}
-          top: 0;
-          left: 50%;
-          margin-left: -100px;
+          grid-area: bubble;
+          box-sizing: border-box;
+          justify-self: center;
           width: 60px;
           height: 60px;
           z-index: 5;
@@ -155,23 +170,6 @@ export default function TimelineSection() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-        }
-
-        @media screen and (max-width: 768px) {
-          .timeline-wrapper::before {
-            left: 0;
-            margin-left: 1em;
-          }
-
-          .bubble {
-            left: 0;
-            width: 40px;
-            height: 40px;
-          }
-
-          .bubble > .icon {
-            font-size: 15px !important;
-          }
         }
 
         .bubble > .icon {
@@ -184,9 +182,13 @@ export default function TimelineSection() {
         }
 
         .balloon {
-          position: relative;
-          width: 35%;
+          background: #fff;
+          margin-top: -1em;
+          width: 90%;
           max-height: 40vh;
+          border-radius: 6px;
+          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+            0 1px 10px 0 rgba(0, 0, 0, 0.12);
           display: flex;
           flex-direction: column;
           overflow-y: hidden;
@@ -195,17 +197,13 @@ export default function TimelineSection() {
         }
 
         .balloon.balloon-odd {
-          ${'' /* left: 50%;
-          transform: translateX(-120%); */}
-          float: left;
-          transform: translateX(10%);
+          grid-area: left;
+          justify-self: end;
         }
 
         .balloon.balloon-even {
-          ${'' /* right: 50%;
-          transform: translateX(120%); */}
-          float: right;
-          transform: translateX(-40%);
+          grid-area: right;
+          justify-self: start;
         }
 
         .date {
@@ -215,11 +213,13 @@ export default function TimelineSection() {
         }
 
         .date.date-even {
-          float: left;
+          grid-area: left;
+          justify-self: end;
         }
 
         .date.date-odd {
-          float: right;
+          grid-area: right;
+          justify-self: start;
         }
 
         .cssanimations .balloon.is-hidden {
@@ -237,6 +237,35 @@ export default function TimelineSection() {
         }
 
         @media screen and (max-width: 768px) {
+          .timeline-wrapper::before {
+            left: 0;
+            margin-left: 1em;
+          }
+
+          .bubble {
+            width: 40px;
+            height: 40px;
+          }
+
+          .bubble > .icon {
+            font-size: 15px !important;
+          }
+
+          .timeline-block {
+            position: relative;
+            top: 0;
+            margin: 1em 1em;
+            display: grid;
+            grid-template: auto / 60px 1fr;
+            grid-template-areas: 'bubble right';
+            ${'' /* grid-gap: 10px 10px; */}
+            align-items: start;
+          }
+
+          .date.date-even {
+            grid-area: right;
+            justify-self: start;
+          }
         }
 
         @keyframes cd-bounce-1 {
