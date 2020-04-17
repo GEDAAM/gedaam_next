@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import styles from '../../assets/jss/pages/main';
-import { timelineSection } from './TimelineSection.styles';
+import style from './TimelineSection.styles';
 
 const useStyles = makeStyles(styles);
 export default function TimelineSection() {
@@ -94,7 +94,7 @@ export default function TimelineSection() {
           ))}
         </div>
       </div>
-      <style jsx>{timelineSection}</style>
+      <style jsx>{style}</style>
     </section>
   );
 }

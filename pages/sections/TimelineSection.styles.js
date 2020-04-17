@@ -2,7 +2,7 @@
 import css from 'styled-jsx/css';
 import { infoColor } from '../../assets/jss/nextjs-material-kit';
 
-export const timelineSection = css`
+export default css`
   .timeline {
     padding-bottom: 0rem;
     height: 100%;
