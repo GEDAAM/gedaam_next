@@ -1,40 +1,33 @@
-import { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from '../assets/jss/pages/main';
 
 import Footer from '../components/Footer/Footer';
-import { parallax } from './Parallax.styles';
+import { parallaxStyles } from './Parallax.styles';
 
-export default function Parallax(props) {
+export default function Parallax({ header, children: section, content, overlayColor, imageSrc }) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
 
   return (
-    <div>
+    <>
       <div>
-        {cloneElement(props.header, {
-          changeColorOnScroll: {
-            color: 'rose',
-            scrollTargetId: 'parallax-wrapper'
-          }
-        })}
-        <div className="wrapper" id="parallax-wrapper">
-          <div className="section parallax">
-            <div className={classes.container}>{props.content}</div>
+        {header('parallax-wrapper')}
+        <div className="parallax__wrapper" id="parallax-wrapper">
+          <div className="parallax parallax__section">
+            <div className={classes.container}>{content}</div>
           </div>
-          <div>{props.children}</div>
+          <section>{section}</section>
           <Footer />
         </div>
       </div>
-      <style jsx>{parallax}</style>
+      <style jsx>{parallaxStyles}</style>
       <style jsx>{/* CSS */ `
         .parallax::before {
-          background-image: linear-gradient(${props.overlayColor}, ${props.overlayColor}),
-            url(${props.image});
+          background-image: linear-gradient(${overlayColor}, ${overlayColor}), url(${imageSrc});
         }
       `}</style>
-    </div>
+    </>
   );
 }
 
@@ -45,7 +38,7 @@ Parallax.defaultProps = {
 Parallax.propTypes = {
   children: PropTypes.node.isRequired,
   content: PropTypes.node.isRequired,
-  header: PropTypes.node.isRequired,
-  image: PropTypes.string.isRequired,
+  header: PropTypes.func.isRequired,
+  imageSrc: PropTypes.string.isRequired,
   overlayColor: PropTypes.string
 };

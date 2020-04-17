@@ -81,7 +81,7 @@ export default function TimelineSection() {
                     marginTop: `${event.iconOffset[0]}px`,
                     marginLeft: `${event.iconOffset[1]}px`
                   }}
-                ></i>
+                />
               </div>
               <div className="balloon" key={`balloon-${id}`}>
                 <h4>{event.balloonTitle}</h4>

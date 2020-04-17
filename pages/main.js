@@ -20,15 +20,20 @@ export default function Main() {
         <title>GEDAAM</title>
       </Head>
       <Parallax
-        header={
+        // Rendering function to allow setting the id of element to be scrolled inside Parallax element
+        header={scrollTargetId => (
           <Header
             brand={<Brand showSideText />}
             color="transparent"
             rightLinks={<HeaderLinks />}
+            changeColorOnScroll={{
+              color: 'rose',
+              scrollTargetId
+            }}
             fixed
           />
-        }
-        image="/img/landing.jpg"
+        )}
+        imageSrc="/img/landing.jpg"
         content={
           <GridContainer>
             <GridItem>

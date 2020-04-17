@@ -1,6 +1,6 @@
 /* styles.js */
 import css from 'styled-jsx/css';
-import { infoColor } from 'assets/jss/nextjs-material-kit.js';
+import { infoColor } from '../../assets/jss/nextjs-material-kit';
 
 export const timelineSection = css`
   .timeline {
@@ -177,9 +177,7 @@ export const timelineSection = css`
       max-height: 70vh;
     }
 
-    /**
-   * The style below is a workaround
-   */
+    /* The style below is a workaround */
     .balloon > p {
       padding-bottom: 3em;
     }

@@ -15,7 +15,7 @@ import Drawer from '@material-ui/core/Drawer';
 // @material-ui/icons
 import Menu from '@material-ui/icons/Menu';
 // core components
-import styles from 'assets/jss/components/headerStyle.js';
+import styles from '../../assets/jss/components/headerStyle';
 
 const useStyles = makeStyles(styles);
 
@@ -99,7 +99,7 @@ export default function Header(props) {
       <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"
-          anchor={'right'}
+          anchor="right"
           open={mobileOpen}
           classes={{
             paper: classes.drawerPaper
@@ -117,7 +117,13 @@ export default function Header(props) {
 }
 
 Header.defaultProps = {
-  color: 'white'
+  color: 'white',
+  changeColorOnScroll: {},
+  leftLinks: null,
+  rightLinks: null,
+  brand: '',
+  fixed: false,
+  absolute: false
 };
 
 Header.propTypes = {

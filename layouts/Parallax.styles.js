@@ -5,8 +5,8 @@ const parallax3d = {
   translate: -300
 };
 
-export const parallax = css`
-  .wrapper {
+export const parallaxStyles = css`
+  .parallax__wrapper {
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
@@ -15,7 +15,7 @@ export const parallax = css`
     transform-style: preserve-3d;
   }
 
-  .section {
+  .parallax__section {
     position: relative;
     height: 90vh;
     max-height: 1000px;
