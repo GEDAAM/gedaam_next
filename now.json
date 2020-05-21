@@ -1,5 +1,1 @@
-{
-  "name": "gedaam-next",
-  "version": 2,
-  "routes": [{ "src": "/build/stats", "status": 404, "dest": "/404" }]
-}
+{"name":"gedaam-next","version":2,"routes":[{"src":"/build/stats","status":404,"dest":"/404"}]}
