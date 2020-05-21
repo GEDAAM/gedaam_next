@@ -1,4 +1,6 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# temporary files
+/.old
+/.tailwind-starter-kit-master
 
 # dependencies
 /node_modules
@@ -26,14 +28,6 @@ yarn-error.log*
 # package
 /dist
 /.next
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
 
 # next.js
 /.next/
