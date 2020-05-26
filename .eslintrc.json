@@ -40,14 +40,18 @@
         "react"
     ],
     "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": ["error", {}, {
+            "usePrettierrc": true
+          }],
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": "off",
         "import/prefer-default-export": "off",
         "react/no-array-index-key": "off",
         // "react/jsx-wrap-multilines": ["error", {"declaration": false, "assignment": false}],
         "indent": ["error", 2],
-        "arrow-parens": ["error", "as-needed"]
+        "arrow-parens": ["error", "as-needed"],
+        "no-console": "off",
+        "react/jsx-props-no-spreading": "off"
         // "jsx-quotes": [
         //     "error",
         //     "prefer-double"

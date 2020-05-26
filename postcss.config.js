@@ -1,4 +1,4 @@
-const tailwindcss = require('tailwindcss');
+// const tailwindcss = require('tailwindcss');
 
 module.exports = {
   // plugins: [
@@ -11,3 +11,6 @@ module.exports = {
   // ]
   plugins: ['tailwindcss', 'postcss-preset-env']
 };
+
+// "@fullhuman/postcss-purgecss": "^2.2.0",
+// "autoprefixer": "9.6.1",
