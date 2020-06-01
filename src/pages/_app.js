@@ -15,7 +15,7 @@ function GedaamApp({ Component, pageProps }) {
 
 GedaamApp.propTypes = {
   Component: PropTypes.element.isRequired,
-  pageProps: PropTypes.arrayOf(PropTypes.any).isRequired
+  pageProps: PropTypes.objectOf(PropTypes.any).isRequired
 };
 
 export default GedaamApp;
