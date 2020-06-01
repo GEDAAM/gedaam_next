@@ -182,7 +182,7 @@ export default function Landing({ timelineEvents }) {
 
           <div className="container mx-auto px-4">
             <div className="items-center flex flex-wrap">
-              <TimelineSection timelineEvents={timelineEvents} />
+              <TimelineSection />
             </div>
           </div>
         </section>
