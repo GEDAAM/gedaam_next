@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import TimelineSection from './TimelineSection';
+import TimelineSection from '../components/sections/Timeline/TimelineSection';
 
 export default function Landing({ timelineEvents }) {
   return (
